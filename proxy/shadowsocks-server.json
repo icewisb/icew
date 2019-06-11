@@ -1,0 +1,16 @@
+{
+    "server":"0.0.0.0",
+    "local_address":"127.0.0.1",
+    "local_port":1080,
+    "port_password":{
+         "9000":"lll0",
+         "9001":"lll1",
+         "9002":"lll2",
+         "9003":"lll3",
+         "9004":"lll4"
+    },
+    "timeout":300,
+    "method":"aes-256-cfb",
+    "fast_open": false
+
+}

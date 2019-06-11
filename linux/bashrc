@@ -1,0 +1,11 @@
+#!/bin/bash
+alias ENV2='virtualenv --no-site-packages --python=python2 venv2'
+alias ENV='virtualenv --no-site-packages --python=python3 venv'
+alias S="cd /home/icew/app/server"
+alias U='cd /home/icew/app/ui'
+alias SE="source /home/icew/app/server/_venv/$1/bin/active"
+alias RE='find . -name "*" | xargs grep -nsI'
+alias GE='git add -A; git commit -a --allow-empty-message -m ""'
+
+bind '"\e[A":history-search-backward'
+bind '"\e[B":history-search-forward'

@@ -1,0 +1,7 @@
+# python
+*.pyc
+/virtualenv
+
+# algs4
+/algs4/algs4-data
+*.class

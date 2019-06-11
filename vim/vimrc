@@ -1,0 +1,256 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" Plugin 'Valloric/YouCompleteMe'
+
+" Plugin 'mattn/emmet-vim'
+
+" Plugin 'nvie/vim-flake8'
+
+" Plugin 'Lokaltog/vim-powerline'
+
+" Plugin 'scrooloose/nerdtree'
+
+" Plugin 'majutsushi/tagbar'
+
+" Plugin 'ctrlpvim/ctrlp.vim'
+
+Plugin 'Vimjas/vim-python-pep8-indent'
+
+" Plugin 'posva/vim-vue'
+
+" Plugin 'Yggdroot/indentLine'
+
+" Plugin 'scrooloose/syntastic'
+
+" Plugin 'Chiel92/vim-autoformat'
+
+" Plugin 'elzr/vim-json'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+if filereadable(expand("~/.vim/plugin.vimrc"))
+    source ~/.vim/plugin.vimrc
+endif
+
+" set modelines=0 " 在vim中默认打开的，但是root用户和vi默认未开启
+
+" autoload .vimrc
+autocmd! bufwritepost $HOME/.vimrc source %
+
+"设置更好的删除
+set backspace=2
+
+syntax on "语法高亮
+
+set encoding=utf-8
+" set fileencodings=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936,utf-16,big5,euc-jp,latin1 "编码设置
+
+"用浅色高亮当前行
+autocmd InsertLeave * se nocul
+autocmd InsertEnter * se cul
+
+" 突出显示当前列
+set cursorcolumn
+" 突出显示当前行
+set cursorline
+
+set smartindent "智能对齐
+
+set autoindent "自动对齐
+
+set confirm "在处理未保存或只读文件的时候，弹出确认框
+
+set number "显示行号
+set history=50  "历史纪录数
+
+" set gdefault "行内替换
+
+colorscheme molokai
+" set background=dark
+set t_Co=256   "256色  " vim-powerline
+
+" set guifont=Menlo:h16:cANSI "设置字体
+" set langmenu=zn_CN.UTF-8
+" set helplang=cn  "语言设置
+
+set ruler "在编辑过程中，在右下角显示光标位置的状态行
+
+set laststatus=2  "总是显示状态行
+
+set showcmd "在状态行显示目前所执行的命令，未完成的指令片段也会显示出来
+
+" set scrolloff=3 "光标移动到buffer的顶部和底部时保持3行的距离
+set showmatch "高亮显示对应的括号
+set matchtime=5 "对应括号高亮时间(单位是十分之一秒)
+
+set autowrite "在切换buffer时自动保存当前文件
+
+" set wildmenu  "增强模式中的命令行自动完成操作
+
+" set linespace=2 "字符间插入的像素行数目
+" set whichwrap=b,s,<,>,[,] "开启normal 或visual模式下的backspace键空格键，左右方向键,insert或replace模式下的左方向键，右方向键的跳行功能
+
+filetype plugin indent on "分为三部分命令:file on,file plugin on,file indent on 分别是自动识别文件类型, 用用文件类型脚本,使用缩进定义文件
+
+" set foldenable  "允许折叠
+" set magic  "设置魔术？神马东东
+set mouse-=a  "允许鼠标
+
+" kj 替换 Esc
+inoremap kj <Esc>
+" vnoremap kj <Esc> 
+ 
+noremap H ^
+noremap L $
+noremap U <C-r>
+
+noremap <TAB> :bnext<CR> 
+noremap <S-TAB> :bprevious<CR> 
+
+
+" 启动的时候不显示那个援助乌干达儿童的提示
+set shortmess=atI
+
+
+" 在上下移动光标时，光标的上方或下方至少会保留显示的行数
+set scrolloff=7
+
+" 打开自动定位到最后编辑的位置, 需要确认 .viminfo 当前用户可写
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
+" se swap之后，同物理行上线直接跳
+nnoremap k gk
+nnoremap gk k
+nnoremap j gj
+nnoremap gj j
+
+" 设置文内智能搜索提示
+" 高亮search命中的文本
+set hlsearch
+" 打开增量搜索模式,随着键入即时搜索
+set incsearch
+" 搜索时忽略大小写
+set ignorecase
+" 有一个或以上大写字母时仍大小写敏感
+set smartcase
+
+" 禁止循环查找
+set nowrapscan
+
+" 防止tmux下vim的背景色显示异常
+" Refer: http://sunaku.github.io/vim-256color-bce.html
+" if &term =~ '256color'
+"     " disable Background Color Erase (BCE) so that color schemes
+"     " render properly when inside 256-color tmux and GNU screen.
+"     " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
+"     set t_ut=
+" endif
+
+
+" F1 - F6 设置
+" F1 废弃这个键,防止调出系统帮助
+" I can type :help on my own, thanks.  Protect your fat fingers from the evils of <F1>
+" noremap <F1> <Esc>"
+
+" F2 行号开关，用于鼠标复制代码用
+" 为方便复制，用<F2>开启/关闭行号显示:
+function! HideNumber()
+  if(&relativenumber == &number)
+    set relativenumber! number!
+  elseif(&number)
+    set number!
+  else
+    set relativenumber!
+  endif
+  set number?
+endfunc
+nnoremap <F2> :call HideNumber()<CR> :IndentLinesToggle<CR>
+
+" F3 显示可打印字符开关
+" nnoremap <F3> :set list! list?<CR>
+" F4 换行开关
+nnoremap <F4> :set wrap! wrap?<CR>
+
+" F6 语法开关，关闭语法可以加快大文件的展示
+nnoremap <F6> :exec exists('syntax_on') ? 'syn off' : 'syn on'<CR>
+
+" F9 复制模式
+set pastetoggle=<F9>
+
+autocmd BufNewFile *.sh,*.py exec ":call AutoSetFileHead()"
+function! AutoSetFileHead()
+    "如果文件类型为.sh文件
+    if &filetype == 'sh'
+        call setline(1, "\#!/bin/bash")
+    endif
+
+    "如果文件类型为python
+    if &filetype == 'python'
+        call setline(1, "\#!/usr/bin/env python3")
+        " call append(1, "\# encoding: utf-8")
+        call setline(2, "\# -*- coding: utf-8 -*-")
+    endif
+    normal G
+endfunc
+
+"==========================================
+" FileType Settings  文件类型设置
+"==========================================
+
+" 具体编辑文件类型的一般设置，比如不要 tab 等
+set tabstop=4 shiftwidth=4 softtabstop=4 expandtab ai " 默认indent为为4
+autocmd BufRead,BufNewFile *.vue setlocal filetype=vue " 后缀为vue的设置vue文件类型
+autocmd BufRead,BufNewFile *.conf setlocal filetype=conf
+" autocmd FileType python,vim set tabstop=4 shiftwidth=4 softtabstop=4 expandtab ai
+autocmd FileType html,css,markdown,json,conf,vue,scss set tabstop=2 shiftwidth=2 softtabstop=2 expandtab ai
+
+" 保存python文件时删除多余空格
+" fun! <SID>StripTrailingWhitespaces()
+"     let l = line(".")
+"     let c = col(".")
+"     %s/\s\+$//e
+"     call cursor(l, c)
+" endfun
+" autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+
+" 定义函数AutoSetFileHead，自动插入文件头
+
+" autocmd! BufNewFile * silent! 0r ~/.vim/skel/Template.%:e 
+
+
+" 调整缩进后自动选中，方便再次操作
+vnoremap < <gv
+vnoremap > >gv
+
+" 选中并高亮最后一次插入的内容
+nnoremap gv `[v`]
+
+set colorcolumn=79
+
+nnoremap ,p :tabp<CR>
+nnoremap ,n :tabn<CR>
