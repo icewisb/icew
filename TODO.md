@@ -181,8 +181,6 @@ web develop
 ## url
 [Web Fundamentals](https://developers.google.com/web)
 
-[重学前端](https://time.geekbang.org/column/article/77345)
-
 ## 移动端适配
 [移动端适配](https://juejin.im/post/5c0fd830f265da61506450a3)
 - postcss

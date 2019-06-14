@@ -227,7 +227,7 @@ set tabstop=4 shiftwidth=4 softtabstop=4 expandtab ai " 默认indent为为4
 autocmd BufRead,BufNewFile *.vue setlocal filetype=vue " 后缀为vue的设置vue文件类型
 autocmd BufRead,BufNewFile *.conf setlocal filetype=conf
 " autocmd FileType python,vim set tabstop=4 shiftwidth=4 softtabstop=4 expandtab ai
-autocmd FileType html,css,markdown,json,conf,vue,scss set tabstop=2 shiftwidth=2 softtabstop=2 expandtab ai
+autocmd FileType html,css,markdown,json,conf,vue,scss,javascript set tabstop=2 shiftwidth=2 softtabstop=2 expandtab ai
 
 " 保存python文件时删除多余空格
 " fun! <SID>StripTrailingWhitespaces()

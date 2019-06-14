@@ -83,4 +83,3 @@ ctrl+w DIRECTION
 ```
 git clone https://github.com/sivel/speedtest-cli.git
 ```
-
