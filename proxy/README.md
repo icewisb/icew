@@ -24,6 +24,12 @@ Proxy
 
 ### pip代理
 pip install --proxy SERVER:PORT PACKAGE
+~/.pip/pip.conf
+
+```
+[global]
+proxy = http://127.0.0.1:8123
+```
 
 ### apt-get代理
 ```
