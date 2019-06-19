@@ -1,0 +1,56 @@
+## Python 数据模型
+https://docs.python.org/2/library/string.html#format-string-syntax
+
+https://stackoverflow.com/questions/1436703/difference-between-str-and-repr
+
+print 时优先调用__str__，没有实现则调用__repr__
+
+逻辑判断时优先__bool__,然后__len__
+
+https://docs.python.org/3/library/stdtypes.html#truth
+
+https://docs.python.org/3/reference/datamodel.html
+
+https://www.python.org/doc/humor/#the-zen-of-python
+
+https://docs.python.org/3/reference/datamodel.html
+
+https://stackoverflow.com/users/95810/alex-martelli
+
+https://en.wikipedia.org/wiki/Object_model
+
+https://docs.python.org/3/reference/datamodel.html
+
+https://zopeinterface.readthedocs.io/en/latest/
+
+## 序列构成的数组
+容器序列
+　　list、tuple 和 collections.deque
+
+扁平序列
+　　str、bytes、bytearray、memoryview 和 array.array
+
+可变序列
+　　list、bytearray、array.array、collections.deque 和memoryview
+
+不可变序列
+　　tuple、str 和 bytes。
+
+ 
+list comprehension & generator expression
+
+https://github.com/fluentpython/example-code
+
+https://github.com/fluentpython/example-code/blob/master/02-array-seq/listcomp_speed.py
+
+https://github.com/fluentpython/example-code/blob/master/02-array-seq/listcomp_speed.py
+
+生成器表达式的语法跟列表推导差不多，只不过把方括号换成圆括号而已。
+
+https://www.python.org/dev/peps/pep-3132/
+
+https://docs.python.org/3/library/gettext.html
+
+https://www.python.org/dev/peps/pep-3113/
+
+http://wiki.scipy.org/Tentative_NumPy_Tutorial
