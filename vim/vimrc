@@ -36,6 +36,8 @@ Plugin 'Vimjas/vim-python-pep8-indent'
 
 " Plugin 'elzr/vim-json'
 
+Plugin 'fatih/vim-go'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -119,10 +121,14 @@ filetype plugin indent on "分为三部分命令:file on,file plugin on,file ind
 " set magic  "设置魔术？神马东东
 set mouse-=a  "允许鼠标
 
+set timeoutlen=100
 " kj 替换 Esc
 inoremap kj <Esc>
 " vnoremap kj <Esc> 
- 
+
+" inoremap <F12> ':imap kj <ESC>'<CR>
+
+
 noremap H ^
 noremap L $
 noremap U <C-r>
@@ -226,8 +232,9 @@ endfunc
 set tabstop=4 shiftwidth=4 softtabstop=4 expandtab ai " 默认indent为为4
 autocmd BufRead,BufNewFile *.vue setlocal filetype=vue " 后缀为vue的设置vue文件类型
 autocmd BufRead,BufNewFile *.conf setlocal filetype=conf
+autocmd BufRead,BufNewFile *.yml setlocal filetype=yml
 " autocmd FileType python,vim set tabstop=4 shiftwidth=4 softtabstop=4 expandtab ai
-autocmd FileType html,css,markdown,json,conf,vue,scss,javascript set tabstop=2 shiftwidth=2 softtabstop=2 expandtab ai
+autocmd FileType yml,html,css,markdown,json,conf,vue,scss,javascript set tabstop=2 shiftwidth=2 softtabstop=2 expandtab ai
 
 " 保存python文件时删除多余空格
 " fun! <SID>StripTrailingWhitespaces()
